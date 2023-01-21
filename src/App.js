@@ -6,7 +6,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        
+        Hello My First class based component
       </div>
     )
   }
