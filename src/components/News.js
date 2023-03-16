@@ -31,7 +31,7 @@ const News = (props) => {
   }
 
   useEffect(() => {
-    document.title = `${capitalizeFirstLetter(props.category)} - JustNews`;
+    document.title = `${capitalizeFirstLetter(props.category)} - Hovo's News`;
     updateNews();
     //eslint-disable-next-line
   }, [])
@@ -48,7 +48,7 @@ const News = (props) => {
     return (
       <>
         <h1 className="text-center mx-1" style={{marginTop: '90px'}}>
-          JustNews - Top {capitalizeFirstLetter(props.category)}{" "}
+          Hovo's News - Top {capitalizeFirstLetter(props.category)}{" "}
           Headlines
         </h1>
         {loading && <Spinner />}
