@@ -15,19 +15,21 @@ const News = (props) => {
   };
 
   const updateNews = async () => {
-    props.setProgress(10);
-    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
-    setLoading(true);
-    const data = await fetch(url);
-    props.setProgress(30);
-    const parsedData = await data.json();
-    props.setProgress(70);
+    setTimeout(async () => {
+      props.setProgress(10);
+      const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
+      setLoading(true);
+      const data = await fetch(url);
+      props.setProgress(30);
+      const parsedData = await data.json();
+      props.setProgress(70);
 
-    setArticles(parsedData.articles)
-    setLoading(false)
-    setTotalResults(parsedData.totalResults)
+      setArticles(parsedData.articles)
+      setLoading(false)
+      setTotalResults(parsedData.totalResults)
 
-    props.setProgress(100);
+      props.setProgress(100);
+    } , 10000)
   }
 
   useEffect(() => {
